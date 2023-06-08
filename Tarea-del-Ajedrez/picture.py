@@ -67,4 +67,11 @@ class Picture:
         repeated_img.extend(self.img)
     return Picture(repeated_img)
   
+  def insert(self, p):
+    """ Devuelve una nueva figura sobreponiendo la figura actual sobre la figura p """
+    insert_img = []    
+    for row_self, row_p in zip(self.img, p.img):
+        insert_row = ''.join([c_self if c_self != ' ' else c_p for c_self, c_p in zip(row_self, row_p)])
+        insert_img.append(insert_row)    
+    return Picture(insert_img)
           
