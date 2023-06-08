@@ -33,16 +33,11 @@ class Picture:
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento 
         al lado derecho de la figura actual """
-    joined_img = []
-    for i in range(len(self.img)):
-        joined_row = ''.join(self.img[i]) + ''.join(p.img[i])
-        joined_img.append(joined_row)
-    return Picture(joined_img)
+    return Picture(None)
 
   def up(self, p):
     """ Devuelve una nueva figura poniendo la figura p bajo la figura actual """
-    new_img = p.img + self.img
-    return Picture(new_img)
+    return Picture(None)
 
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la figura actual """
@@ -51,33 +46,16 @@ class Picture:
   
   def insert(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la figura actual """
-    insert_img = []    
-    for row_self, row_p in zip(self.img, p.img):
-        insert_row = ''.join([c_self if c_self != ' ' else c_p for c_self, c_p in zip(row_self, row_p)])
-        insert_img.append(insert_row)    
-    return Picture(insert_img)
+    return Picture(None)
   
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
         la cantidad de veces que indique el valor de n """
-    repeated_img = [row * n for row in self.img]
-    return Picture(repeated_img)
+    return Picture(None)
 
   def verticalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual hacia abajo
         la cantidad de veces que indique el valor de n """
-    repeated_img = []
-    for _ in range(n):
-        repeated_img.extend(self.img)
-    return Picture(repeated_img)
+    return Picture(None)
   
-  """def insert(self):
-     Devuelve una imagen dentro de otra p
-    insert = []
-    for row in self.img:
-      for pixel in row:
-        if pixel != ' ':
-          insert_row = [pixel]
-    return Picture(insert_row)
-    """
           
